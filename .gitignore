@@ -1,0 +1,7 @@
+
+/vendor/
+.DS_Store
+.svn
+.cvs
+.sass-cache
+Thumbs.db

@@ -1,0 +1,22 @@
+{
+	"name": "jamesmorrison/display-git-branch",
+	"description": "Display Git Branch",
+	"homepage": "https://github.com/jamesmorrison/display-git-branch",
+	"version": "0.1.0",
+	"keywords": [
+		"wordpress"
+	],
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "James Morrison",
+			"email": "james@morrison.me",
+			"homepage": "http://www.jamesmorrison.me"
+		}
+	],
+	"support": {
+		"source": "https://github.com/jamesmorrison/display-git-branch",
+		"issues": "https://github.com/jamesmorrison/display-git-branch/issues"
+	}
+}
