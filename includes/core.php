@@ -96,8 +96,9 @@ function restricted_branches() {
 
 	return apply_filters( 'display_git_branch_restricted_branches',
 		[
-			'master',
-			'develop',
+			'trunk',
+			'master',  // WARNING: this will be deprecated in a future release
+			'develop', // WARNING: this will be deprecated in a future release
 		]
 	);
 
