@@ -2,8 +2,6 @@
 /**
  * Core plugin functionality.
  *
- * This file is used to register global commands for the GP Surgery Platform
- *
  * @package Display_Git_Branch
  */
 
