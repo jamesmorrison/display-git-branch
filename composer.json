@@ -2,7 +2,7 @@
 	"name": "jamesmorrison/display-git-branch",
 	"description": "Display Git Branch",
 	"homepage": "https://github.com/jamesmorrison/display-git-branch",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"keywords": [
 		"wordpress"
 	],
@@ -11,8 +11,8 @@
 	"authors": [
 		{
 			"name": "James Morrison",
-			"email": "james@morrison.me",
-			"homepage": "http://www.jamesmorrison.me"
+			"email": "james@morrison.uk",
+			"homepage": "https://morrison.uk"
 		}
 	],
 	"support": {
