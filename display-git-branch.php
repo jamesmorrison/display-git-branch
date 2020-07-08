@@ -3,17 +3,19 @@
  * Plugin Name: Display Git Branch
  * Plugin URI:  https://github.com/jamesmorrison/display-git-branch/
  * Description: Shows which Git branch you're working on. Highlights configurable restricted branches in red.
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author:      James Morrison
- * Author URI:  http://www.jamesmorrison.me/
+ * Author URI:  https://morrison.uk/
  * Text Domain: display-git-branch
+ *
+ * @package Display_Git_Branch
  **/
 
 // Security check
 defined( 'ABSPATH' ) || die();
 
 // Useful global constants
-define( 'DISPLAY_GIT_BRANCH_VERSION', '0.1.0' );
+define( 'DISPLAY_GIT_BRANCH_VERSION', '0.1.1' );
 define( 'DISPLAY_GIT_BRANCH_URL', plugin_dir_url( __FILE__ ) );
 define( 'DISPLAY_GIT_BRANCH_PATH', dirname( __FILE__ ) . '/' );
 define( 'DISPLAY_GIT_BRANCH_INC', DISPLAY_GIT_BRANCH_PATH . 'includes/' );
