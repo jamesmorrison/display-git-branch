@@ -47,7 +47,7 @@ function wp_admin_bar( $wp_admin_bar ) {
 		[
 			'id'    => 'show-git-branch',
 			/* Translators: The branch name */
-			'title' => sprintf( __( 'Git branch: %s', 'display-git-branch' ), branch() ),
+			'title' => sprintf( __( 'Git branch: %s', 'display-git-branch' ), esc_attr( branch() ) ),
 		]
 	);
 
@@ -64,10 +64,12 @@ function branch() {
 	$branch = esc_html( __( 'Not detected', 'display-git-branch' ) );
 
 	// Paths to search for a git branch
-	$paths = apply_filters( 'display_git_branch_paths',
+	$paths = apply_filters(
+		'display_git_branch_paths',
 		[
-			trailingslashit( WP_CONTENT_DIR ), // Content directory
-			trailingslashit( ABSPATH ),        // Site root
+			trailingslashit( WP_CONTENT_DIR ),     // Content directory
+			trailingslashit( ABSPATH ),            // Site root
+			trailingslashit( dirname( ABSPATH ) ), // One level above site
 		]
 	);
 
@@ -75,7 +77,7 @@ function branch() {
 	// PHPCS suggests wp_remote_get instead of file_get_contents - this does not work as our path is relative
 	foreach ( $paths as $location ) {
 		if ( file_exists( $location . '.git/HEAD' ) ) {
-			$branch = str_replace( "\n", '', implode( '/', array_slice( explode( '/', file_get_contents( $location . '.git/HEAD' ) ), 2 ) ) );
+			$branch = str_replace( "\n", '', implode( '/', array_slice( explode( '/', file_get_contents( $location . '.git/HEAD' ) ), 2 ) ) ); // phpcs:ignore
 			break;
 		}
 	}
@@ -92,11 +94,11 @@ function branch() {
  */
 function restricted_branches() {
 
-	return apply_filters( 'display_git_branch_restricted_branches',
+	return apply_filters(
+		'display_git_branch_restricted_branches',
 		[
 			'trunk',
-			'master',  // WARNING: this will be deprecated in a future release
-			'develop', // WARNING: this will be deprecated in a future release
+			'develop',
 		]
 	);
 
@@ -108,7 +110,6 @@ function restricted_branches() {
  * Defines the style for the WP Admin Bar node
  */
 function style() {
-
 	?>
 		<style type="text/css">#wp-admin-bar-show-git-branch .ab-item:before { content: "\f237"; top: 2px; }</style>
 	<?php
@@ -121,7 +122,6 @@ function style() {
  * Defines the style for the WP Admin Bar node
  */
 function warning_style() {
-
 	?>
 		<style type="text/css">#wp-admin-bar-show-git-branch .ab-item { background: #c00; }</style>
 	<?php
